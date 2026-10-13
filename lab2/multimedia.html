@@ -1,28 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setúbal - Multimédia</title>
-  </head>
-  <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setúbal — Multimédia · Lab 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+/* O enunciado pede esta demonstração de Flexbox no head. */
+.fotografias { display: flex; flex-wrap: wrap; gap: 12px; }
+</style>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+  <body class="">
     <header>
       <h1>Setúbal</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
-      </nav>
     </header>
-
+    <nav aria-label="Menu da cidade">
+      <a href="index.html">Home</a>
+      <a href="local.html">Localização</a>
+      <a href="multimedia.html" aria-current="page">Multimédia</a>
+      <a href="info.html">Informações</a>
+      <a href="../index.html#projetos">Portefólio</a>
+    </nav>
+    <img class="imagem-cidade" src="images/vista-cidade.jpg" alt="Vista de Setúbal junto ao rio Sado" width="600" height="400">
     <main>
       <h2>Multimédia</h2>
-      <p>Galeria de fotografias e vídeos de Setúbal e da Arrábida.</p>
+      <p>Fotografias, vídeo e um pequeno poema sobre Setúbal.</p>
+      <p class="ancoras">
+        <a href="#fotografias">Fotografias</a> · <a href="#video">Vídeo</a> · <a href="#poesia">Poesia</a>
+      </p>
+      <section>
+        <h3 id="fotografias">Fotografias</h3>
+        <div class="fotografias">
+          <a href="images/jardim.jpg" target="_blank" rel="noopener">
+            <img src="images/jardim-mini.jpg" alt="Jardim com um canal e uma ponte" width="120" height="80" loading="lazy">
+          </a>
+          <a href="images/rua-colorida.jpg" target="_blank" rel="noopener">
+            <img src="images/rua-colorida-mini.jpg" alt="Rua de Setúbal decorada com fitas coloridas" width="120" height="80" loading="lazy">
+          </a>
+          <a href="images/praia.jpg" target="_blank" rel="noopener">
+            <img src="images/praia-mini.jpg" alt="Praia com pessoas junto ao mar" width="120" height="80" loading="lazy">
+          </a>
+          <a href="images/edificio.jpg" target="_blank" rel="noopener">
+            <img src="images/edificio-mini.jpg" alt="Edifício de esquina no centro de Setúbal" width="120" height="80" loading="lazy">
+          </a>
+          <a href="images/miradouro.jpg" target="_blank" rel="noopener">
+            <img src="images/miradouro-mini.jpg" alt="Vista de Setúbal com uma bandeira portuguesa" width="120" height="80" loading="lazy">
+          </a>
+          <a href="images/vista-cidade.jpg" target="_blank" rel="noopener">
+            <img src="images/vista-cidade-mini.jpg" alt="Vista da cidade junto ao Sado" width="120" height="80" loading="lazy">
+          </a>
+          <a href="images/igreja.jpg" target="_blank" rel="noopener">
+            <img src="images/igreja-mini.jpg" alt="Fachada de uma igreja" width="120" height="80" loading="lazy">
+          </a>
+          <a href="images/praca.jpg" target="_blank" rel="noopener">
+            <img src="images/praca-mini.jpg" alt="Praça com a estátua de Bocage" width="120" height="80" loading="lazy">
+          </a>
+        </div>
+      </section>
+      <section>
+        <h3 id="video">Vídeo</h3>
+        <iframe class="video-cidade" src="https://www.youtube.com/embed/ED9P64jN844" title="Vídeo sobre Setúbal" width="560" height="315" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </section>
+      <section>
+        <h3 id="poesia">Poesia</h3>
+        <div class="poema">
+          <p>Setúbal, cidade bela,</p>
+          <p>Entre a serra e o mar azul,</p>
+          <p>És de Portugal a estrela,</p>
+          <p>A brilhar mais a sul.</p>
+        </div>
+      </section>
     </main>
-
     <footer>
-      <p>DIW 2026</p>
+      <p>DIW 2026 · Francisco Inácio · Lab 2</p>
+      <a href="../index.html">Voltar ao portefólio</a>
     </footer>
   </body>
 </html>

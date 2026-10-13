@@ -1,31 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setúbal - Informação</title>
-  </head>
-  <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setúbal — Informações · Lab 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+  <body class="">
     <header>
       <h1>Setúbal</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
-      </nav>
     </header>
-
+    <nav aria-label="Menu da cidade">
+      <a href="index.html">Home</a>
+      <a href="local.html">Localização</a>
+      <a href="multimedia.html">Multimédia</a>
+      <a href="info.html" aria-current="page">Informações</a>
+      <a href="../index.html#projetos">Portefólio</a>
+    </nav>
+    <img class="imagem-cidade" src="images/vista-cidade.jpg" alt="Vista de Setúbal junto ao rio Sado" width="600" height="400">
     <main>
-      <h2>Informação</h2>
-      <p>
-        Conhecida pelo choco frito, pela serra, pelas praias e pela tradição
-        piscatória.
-      </p>
+      <h2>Informações</h2>
+      <p>Alguns dados gerais e cinco curiosidades sobre Setúbal.</p>
+      <div class="tabela-scroll">
+        <table>
+          <caption>Informações gerais sobre Setúbal</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tema</th>
+              <th scope="col">Elemento</th>
+              <th scope="col">Informação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th rowspan="2" scope="rowgroup">Localização</th>
+              <th scope="row">País</th>
+              <td>Portugal</td>
+            </tr>
+            <tr>
+              <th scope="row">Continente</th>
+              <td>Europa</td>
+            </tr>
+            <tr>
+              <th rowspan="2" scope="rowgroup">Paisagem</th>
+              <th scope="row">Rio</th>
+              <td>Sado</td>
+            </tr>
+            <tr>
+              <th scope="row">Serra</th>
+              <td>Arrábida</td>
+            </tr>
+            <tr>
+              <th scope="row">Município</th>
+              <td colspan="2">
+                <a href="https://www.mun-setubal.pt/" target="_blank" rel="noopener">Câmara Municipal de Setúbal</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Cinco curiosidades</h3>
+      <ul class="curiosidades">
+        <li>O estuário do Sado é conhecido pela sua comunidade de golfinhos-roazes.</li>
+        <li>O poeta Bocage nasceu em Setúbal e dá nome a uma praça da cidade.</li>
+        <li>Luísa Todi, cantora lírica, também nasceu em Setúbal.</li>
+        <li>O choco frito é um dos pratos mais conhecidos da gastronomia local.</li>
+        <li>A cidade tem ligação ao mar, à pesca e à Serra da Arrábida.</li>
+      </ul>
     </main>
-
     <footer>
-      <p>DIW 2026</p>
+      <p>DIW 2026 · Francisco Inácio · Lab 2</p>
+      <a href="../index.html">Voltar ao portefólio</a>
     </footer>
   </body>
 </html>

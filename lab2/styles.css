@@ -1,0 +1,39 @@
+/* Lab 2: cabeçalho verde, menu escuro e conteúdo claro. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background-color: #eeeeee; color: #252525; line-height: 1.6; }
+header { background-color: #3d9e43; color: white; padding: 22px; text-align: center; }
+h1 { margin: 0; font-size: 30px; }
+nav { background-color: #272727; display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
+nav a { color: white; padding: 10px 16px; text-decoration: none; }
+nav a:hover, nav a[aria-current="page"] { background-color: #3d9e43; }
+a:focus-visible { outline: 3px solid #e3a83a; outline-offset: 3px; }
+.imagem-cidade { display: block; width: 100%; height: 260px; object-fit: cover; }
+main { margin: 20px; padding: 22px; background-color: white; border-radius: 5px; }
+h2 { margin-top: 0; }
+section { margin-top: 28px; }
+h3 { color: #286b2d; }
+a { color: #286b2d; }
+.fotografias { display: flex; flex-wrap: wrap; gap: 12px; }
+.fotografias img { display: block; width: 120px; height: 80px; object-fit: cover; border-radius: 8px; }
+.fotografias a { display: block; }
+iframe { display: block; max-width: 100%; border: 0; }
+.mapa { width: 600px; height: 400px; }
+.video-cidade { width: 560px; height: auto; aspect-ratio: 16 / 9; }
+.poema p { margin: 6px 0; }
+.poema p:nth-child(odd) { color: #286b2d; font-weight: bold; }
+.poema p:nth-child(even) { color: #315b7c; font-style: italic; }
+.tabela-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; max-width: 700px; }
+caption { text-align: left; font-weight: bold; margin-bottom: 10px; }
+th, td { border: 1px solid #b5b5b5; padding: 10px; text-align: left; }
+th { color: #245629; background-color: #e8f1e7; }
+td { color: #454545; }
+footer { background-color: #272727; color: white; text-align: center; padding: 16px; }
+footer p { margin: 0; }
+footer a { color: #d6efd2; }
+@media (max-width: 600px) {
+ main { margin: 12px; padding: 16px; }
+ nav a { padding: 10px; }
+ .imagem-cidade { height: 190px; }
+ .mapa { width: 100%; height: 300px; }
+}

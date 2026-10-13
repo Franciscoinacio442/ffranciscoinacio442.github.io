@@ -1,29 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setúbal - Home</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setúbal — Home · Lab 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+  <body class="pagina-home">
     <header>
       <h1>Setúbal</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="local.html">Localização</a>
-        <a href="multimedia.html">Multimédia</a>
-        <a href="info.html">Informação</a>
-      </nav>
     </header>
-
+    <nav aria-label="Menu da cidade">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="local.html">Localização</a>
+      <a href="multimedia.html">Multimédia</a>
+      <a href="info.html">Informações</a>
+      <a href="../index.html#projetos">Portefólio</a>
+    </nav>
     <main>
-      <h2>Home</h2>
-      <p>Setúbal é uma cidade linda junto ao rio Sado e à Serra da Arrábida!</p>
+      <section class="capa-cidade">
+        <img src="images/vista-cidade.jpg" alt="Setúbal junto ao Sado" width="600" height="400">
+        <div class="texto-capa">
+          <h2>Setúbal, entre o rio e a serra</h2>
+          <p>Uma cidade para conhecer sem pressa.</p>
+          <a class="botao" href="multimedia.html">Ver fotografias</a>
+        </div>
+      </section>
+      <section class="secao-clara">
+        <h2>A minha cidade</h2>
+        <p>Este laboratório continua o trabalho sobre Setúbal. Agora a organização adapta-se ao ecrã, com Flexbox, Grid e media queries.</p>
+        <p>O conteúdo é o mesmo tema do Lab 2, com uma apresentação mais clara e espaços maiores.</p>
+      </section>
     </main>
-
     <footer>
-      <p>DIW 2026</p>
+      <p>DIW 2026 · Francisco Inácio · Lab 3</p>
+      <a href="../index.html">Voltar ao portefólio</a>
     </footer>
   </body>
 </html>
