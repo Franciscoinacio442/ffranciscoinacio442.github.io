@@ -1,0 +1,94 @@
+img{
+    width:150px;
+    height:150px;
+   
+    
+}
+header{
+    display: flex;
+    justify-content: center;
+    background-color: bisque;
+    grid-area: h;
+    gap: 10px;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+     margin: 20px; 
+     background-color: white;
+     padding: 100px;
+}
+main{
+    display: flex;
+    background-color: orange;
+    grid-area: m;
+    gap: 10px;
+    justify-content: center;
+    flex-direction:column;
+    border-radius: 10px;
+    
+}
+footer{
+    display:flex;
+    background-color: blueviolet;
+    grid-area: f;
+    gap: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.disciplina {
+    background-color: blanchedalmond;
+    gap: 10px;
+    height: 35vh;
+    border-radius: 10px;
+    margin: 20px; 
+}
+header li {
+  
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 20px;
+    list-style: none;
+    margin: 20px; 
+}
+
+header li:hover {
+    background-color: gray;
+}
+.Money{
+    
+    background-color: red;
+    gap: 10px;
+    height: 35vh;
+    border-radius: 10px;
+    margin: 20px; 
+}
+.texto{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+body{
+    height: 95vh;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 5fr 1fr;
+    grid-template-areas: "h m" "h f";
+    gap: 20px;
+}
+
+
+
+@media (max-width: 450px) {
+  body { 
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+ }
+
+}
