@@ -1,78 +1,405 @@
 /* Lab 3: branco, bege, fotografias e organização responsiva. */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: Arial, sans-serif; background-color: #faf8f3; color: #292b28; line-height: 1.65; }
-header { background-color: #faf8f3; padding: 20px 6%; border-bottom: 1px solid #ded8ca; }
-h1 { margin: 0; font-size: 30px; }
-nav { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 6%; background-color: #e8e1d3; }
-nav a { padding: 9px 14px; color: #292b28; text-decoration: none; border-bottom: 2px solid transparent; }
-nav a:hover, nav a[aria-current="page"] { border-bottom-color: #52765c; background-color: #f7f3ea; }
-a { color: #3d6548; }
-a:focus-visible { outline: 3px solid #52765c; outline-offset: 4px; }
-h2, h3 { margin-top: 0; line-height: 1.25; }
-main > section { min-height: 100vh; padding: 60px 6%; }
-.secao-clara { background-color: #faf8f3; }
-.secao-bege { background-color: #e8e1d3; }
-.botao { display: inline-block; padding: 12px 20px; background-color: #faf8f3; color: #2b4f35; border: 1px solid #cfc7b7; text-decoration: none; }
-.capa-cidade, .imagem-emblematica { position: relative; padding: 0; min-height: 75vh; }
-.capa-cidade img, .imagem-emblematica > img { display: block; width: 100%; height: 75vh; object-fit: cover; }
-.texto-capa { position: absolute; left: 6%; bottom: 8%; max-width: 620px; padding: 24px; background-color: rgba(250,248,243,.92); }
-.texto-capa h2 { font-size: 36px; }
-.imagem-emblematica h2 { position: absolute; left: 6%; bottom: 8%; margin: 0; padding: 14px 20px; font-size: 4vw; background-color: rgba(250,248,243,.92); }
-.fotografias { display: flex; flex-wrap: wrap; gap: 18px; }
-.fotografias a { display: block; }
-.fotografias img { display: block; width: 180px; height: 120px; object-fit: cover; border-radius: 5px; transition: transform .25s ease, box-shadow .25s ease; }
-.fotografias a:hover img, .fotografias a:focus-visible img { transform: scale(1.04); box-shadow: 0 5px 14px rgba(0,0,0,.18); }
-iframe { display: block; max-width: 100%; border: 0; }
-.video-cidade { width: min(850px,100%); height: auto; aspect-ratio: 16 / 9; }
-.poema p { margin: 10px 0; font-size: 22px; }
-.poema p:nth-child(odd) { color: #3d6548; font-weight: bold; }
-.poema p:nth-child(even) { color: #746346; font-style: italic; }
-.localizacao-flex { display: flex; gap: 30px; align-items: start; }
-.localizacao-flex > div { flex: 1; }
-.localizacao-flex .mapa { flex: 1; width: 50%; height: 400px; }
-.tabela-scroll { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; }
-caption { text-align: left; margin-bottom: 10px; }
-th, td { border: 1px solid #c9c2b5; padding: 12px; text-align: left; }
-th { background-color: #e8e1d3; color: #3d6548; }
-td { color: #383b35; }
-.informacoes-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 30px; grid-template-areas: "dados dados praca" "curiosidades . mar"; }
-.dados { grid-area: dados; }
-.curiosidades-bloco { grid-area: curiosidades; }
-.foto-praca { grid-area: praca; }
-.foto-mar { grid-area: mar; }
-figure { margin: 0; }
-figure img { display: block; width: 100%; height: 280px; object-fit: cover; }
-figcaption { font-size: 14px; color: #665e51; padding-top: 8px; }
-.parallax { display: flex; align-items: center; justify-content: center; background-image: linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.18)), url('../images/mar.jpg'); background-size: cover; background-position: center; background-attachment: fixed; }
-.parallax > div { background-color: rgba(250,248,243,.93); padding: 28px; max-width: 650px; text-align: center; }
-.fundo-video { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; background: url('../images/barco.jpg') center/cover; }
-.fundo-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.fundo-video > div { position: relative; padding: 28px; background-color: rgba(250,248,243,.92); max-width: 650px; }
-footer { padding: 22px 6%; background-color: #e8e1d3; }
-footer p { margin: 0; }
-@media (max-width: 700px) {
- header { padding: 18px; }
- nav { padding: 8px 12px; }
- nav a { flex: 1 1 125px; text-align: center; }
- main > section { padding: 35px 18px; }
- main > .capa-cidade, main > .imagem-emblematica { padding: 0; }
- .texto-capa { left: 18px; right: 18px; padding: 18px; }
- .texto-capa h2 { font-size: 28px; }
- .imagem-emblematica h2 { left: 18px; right: 18px; font-size: 7vw; }
- .fotografias { gap: 12px; }
- .fotografias img { width: 140px; height: 94px; }
- .localizacao-flex { flex-direction: column; }
- .localizacao-flex .mapa { width: 100%; flex: none; height: 330px; }
- .informacoes-grid { grid-template-columns: 1fr; grid-template-areas: "dados" "curiosidades" "praca" "mar"; }
- .parallax { background-attachment: scroll; }
- footer { padding: 20px 18px; }
+* {
+    box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #faf8f3;
+    color: #292b28;
+    line-height: 1.65;
+}
+
+header {
+    background-color: #faf8f3;
+    padding: 20px 6%;
+    border-bottom: 1px solid #ded8ca;
+}
+
+h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px 6%;
+    background-color: #e8e1d3;
+}
+
+nav a {
+    padding: 9px 14px;
+    color: #292b28;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    border-bottom-color: #52765c;
+    background-color: #f7f3ea;
+}
+
+a {
+    color: #3d6548;
+}
+
+a:focus-visible {
+    outline: 3px solid #52765c;
+    outline-offset: 4px;
+}
+
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.25;
+}
+
+main>section {
+    min-height: 100vh;
+    padding: 60px 6%;
+}
+
+.secao-clara {
+    background-color: #faf8f3;
+}
+
+.secao-bege {
+    background-color: #e8e1d3;
+}
+
+.botao {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #faf8f3;
+    color: #2b4f35;
+    border: 1px solid #cfc7b7;
+    text-decoration: none;
+}
+
+.capa-cidade,
+.imagem-emblematica {
+    position: relative;
+    padding: 0;
+    min-height: 75vh;
+}
+
+.capa-cidade img,
+.imagem-emblematica>img {
+    display: block;
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+}
+
+.texto-capa {
+    position: absolute;
+    left: 6%;
+    bottom: 8%;
+    max-width: 620px;
+    padding: 24px;
+    background-color: rgba(250, 248, 243, .92);
+}
+
+.texto-capa h2 {
+    font-size: 36px;
+}
+
+.imagem-emblematica h2 {
+    position: absolute;
+    left: 6%;
+    bottom: 8%;
+    margin: 0;
+    padding: 14px 20px;
+    font-size: 4vw;
+    background-color: rgba(250, 248, 243, .92);
+}
+
+.fotografias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.fotografias a {
+    display: block;
+}
+
+.fotografias img {
+    display: block;
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.fotografias a:hover img,
+.fotografias a:focus-visible img {
+    transform: scale(1.04);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .18);
+}
+
+iframe {
+    display: block;
+    max-width: 100%;
+    border: 0;
+}
+
+.video-cidade {
+    width: min(850px, 100%);
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.poema p {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.poema p:nth-child(odd) {
+    color: #3d6548;
+    font-weight: bold;
+}
+
+.poema p:nth-child(even) {
+    color: #746346;
+    font-style: italic;
+}
+
+.localizacao-flex {
+    display: flex;
+    gap: 30px;
+    align-items: start;
+}
+
+.localizacao-flex>div {
+    flex: 1;
+}
+
+.localizacao-flex .mapa {
+    flex: 1;
+    width: 50%;
+    height: 400px;
+}
+
+.tabela-scroll {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    border: 1px solid #c9c2b5;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #e8e1d3;
+    color: #3d6548;
+}
+
+td {
+    color: #383b35;
+}
+
+.informacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    grid-template-areas: "dados dados praca" "curiosidades . mar";
+}
+
+.dados {
+    grid-area: dados;
+}
+
+.curiosidades-bloco {
+    grid-area: curiosidades;
+}
+
+.foto-praca {
+    grid-area: praca;
+}
+
+.foto-mar {
+    grid-area: mar;
+}
+
+figure {
+    margin: 0;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+figcaption {
+    font-size: 14px;
+    color: #665e51;
+    padding-top: 8px;
+}
+
+.parallax {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, .18), rgba(0, 0, 0, .18)), url('../images/mar.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.parallax>div {
+    background-color: rgba(250, 248, 243, .93);
+    padding: 28px;
+    max-width: 650px;
+    text-align: center;
+}
+
+.fundo-video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: url('../images/barco.jpg') center/cover;
+}
+
+.fundo-video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fundo-video>div {
+    position: relative;
+    padding: 28px;
+    background-color: rgba(250, 248, 243, .92);
+    max-width: 650px;
+}
+
+footer {
+    padding: 22px 6%;
+    background-color: #e8e1d3;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 18px;
+    }
+
+    nav {
+        padding: 8px 12px;
+    }
+
+    nav a {
+        flex: 1 1 125px;
+        text-align: center;
+    }
+
+    main>section {
+        padding: 35px 18px;
+    }
+
+    main>.capa-cidade,
+    main>.imagem-emblematica {
+        padding: 0;
+    }
+
+    .texto-capa {
+        left: 18px;
+        right: 18px;
+        padding: 18px;
+    }
+
+    .texto-capa h2 {
+        font-size: 28px;
+    }
+
+    .imagem-emblematica h2 {
+        left: 18px;
+        right: 18px;
+        font-size: 7vw;
+    }
+
+    .fotografias {
+        gap: 12px;
+    }
+
+    .fotografias img {
+        width: 140px;
+        height: 94px;
+    }
+
+    .localizacao-flex {
+        flex-direction: column;
+    }
+
+    .localizacao-flex .mapa {
+        width: 100%;
+        flex: none;
+        height: 330px;
+    }
+
+    .informacoes-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "dados" "curiosidades" "praca" "mar";
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
+
+    footer {
+        padding: 20px 18px;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
- html { scroll-behavior: auto; }
- .parallax { background-attachment: scroll; }
- .fotografias img { transition: none; }
- .fotografias a:hover img { transform: none; }
- .fundo-video video { display: none; }
+    html {
+        scroll-behavior: auto;
+    }
+
+    .parallax {
+        background-attachment: scroll;
+    }
+
+    .fotografias img {
+        transition: none;
+    }
+
+    .fotografias a:hover img {
+        transform: none;
+    }
+
+    .fundo-video video {
+        display: none;
+    }
 }

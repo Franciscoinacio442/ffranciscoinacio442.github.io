@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Café DIW</title>
+  <style>
+    *{box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: aquamarine;
+    
+}
+header, section, aside, article, footer{
+    border:2px solid black;
+    padding: 10px;
+}
+header{
+    display:flex;
+     background-color: green;
+     justify-content: space-between;
+
+}
+header nav {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+header nav a{
+    background-color: beige;
+    padding:20px;
+    border-radius: 14px;
+    text-decoration: none;
+}
+header nav a:hover{
+    background-color: grey;
+}
+main{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "d d"
+    "p hora";
+     background-color:orange;
+     padding:10px;
+     gap:10px;
+}
+.destaque{
+    background-color: brown;
+    grid-area:d;
+}
+.pratos{
+    display:flex;
+    grid-area:p;
+    flex-wrap:wrap;
+    gap:10px;
+    
+   
+    
+}
+.pratos h2{
+    width:100vh;
+}
+.pratos article{
+    background-color: white;
+    width:300px;
+    max-width: 100%;
+    min-height: 135px;
+}
+.horario{
+    grid-area:hora; 
+     background-color:beige;
+     list-style:none;
+}
+.horario li {
+    list-style:none;
+}
+footer{
+    
+     background-color:purple;
+    
+}
+
+@media (max-width: 600px) {
+  header { 
+    flex-direction: column;
+    gap:8px;
+   }
+main{
+    grid-template-columns: 1fr;
+    grid-template-areas: "d"
+    "p"
+    "hora";
+}
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Café DIW</h1>
+    <nav>
+      <a href="#">Menu</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </header>
+ 
+  
+
+  <main>
+    <section class="destaque">
+      <h2>Prato do dia</h2>
+      <p>Bacalhau com natas, sobremesa e café por 9,50 €.</p>
+    </section>
+    <section class="texto">
+        <h2>Os nossos pratos</h2>
+         <section class="pratos">
+      
+      <article><h3>Bacalhau</h3><p>9,50 €</p></article>
+      <article><h3>Francesinha</h3><p>8,00 €</p></article>
+      <article><h3>Bifana</h3><p>3,50 €</p></article>
+      <article><h3>Salada</h3><p>6,00 €</p></article>
+    </section>
+    </section>
+    
+    <aside class="horario">
+      <h2>Horário</h2>
+      <ul>
+        <li>Seg a Sex: 8h às 20h</li>
+        <li>Sábado: 9h às 14h</li>
+        <li>Domingo: fechado</li>
+      </ul>
+    </aside>
+  </main>
+  
+
+  <footer>
+    <p>© 2026 Café DIW</p>
+  </footer>
+</body>
+</html>

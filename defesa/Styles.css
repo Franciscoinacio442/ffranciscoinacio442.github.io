@@ -1,0 +1,91 @@
+
+body{
+
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 5fr 1fr;
+    grid-template-areas: "h h"
+    "m a"
+    "f f"
+    ;
+    height: 100vh;
+background-color:wheat;
+gap: 20px;
+}
+main {
+   border-radius: 14px; 
+    grid-area: m;
+    background-color: yellowgreen;
+}
+aside{
+    grid-area: a;
+    background-color: white;
+    border-radius: 10px; 
+
+}
+aside li{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-color: red;
+    gap:20px;
+    padding: 30px;
+    margin: 10px;
+    width:30px;
+    
+}
+aside li:hover{
+        background-color: grey;
+    }
+li:nth-child(2n){
+    background-color: orange;
+}
+aside ul{
+    display: flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+footer{
+    display: flex;
+    grid-area: f;
+    background-color: brown;
+   border-radius: 10px; 
+   justify-content: center;
+   align-items: center;
+}
+header{
+    grid-area: h;
+    background-color: violet;
+    border-radius: 10px; 
+}
+.inicio{
+    background-color: aqua;
+    height: 20vh;
+    margin: 10px;
+    border-radius: 10px; 
+}
+.texto{
+    background-color: blanchedalmond;
+    height: 40vh;
+    margin: 10px;
+    border-radius: 10px; 
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+.imagemm{
+    display:flex;
+    justify-content: space-between;
+    padding:50px;
+}
+@media (max-width: 510px) {
+  body { display: flex;
+    flex-direction: column; 
+}
+.texto{
+    display: flex;
+    flex-direction: column; 
+}
+}
