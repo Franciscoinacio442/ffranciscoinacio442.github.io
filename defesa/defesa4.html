@@ -1,48 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{box-sizing: border-box;}
-        body{
+        * {
+            box-sizing: border-box;
+        }
+        body > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d6e8ff;
+  border: 5px solid #1b3a5c;
+}
+
+        body {
             background-color: aqua;
-            margin:  20px;
+            height: 100vh;
             display: grid;
             grid-template-columns: 1fr 3fr 1fr;
             grid-template-rows: 2fr 3fr 1fr;
             grid-template-areas: "h h h"
-            "n m a"
-            "n f f";
+                "n m a"
+                "n f f";
         }
-        header{
+
+        header {
             background-color: antiquewhite;
             grid-area: h;
+            height: 30vh;
+            border-radius: 5px;
+            padding: 10px;
+            margin:10px;
         }
-        nav{
+
+        nav {
             background-color: white;
             grid-area: n;
+            height: 60vh;
+            border-radius: 5px;
+            padding: 10px;
+            margin:10px;
         }
-        main{
+
+        main {
             background-color: blue;
             grid-area: m;
+            height: 45vh;
+            border-radius: 5px;
+           padding: 10px;
+           margin:10px;
         }
-        aside{
+
+        aside {
             background-color: brown;
             grid-area: a;
+            height: 45vh;
+            border-radius: 5px;
+           padding: 10px;
         }
-        footer{
+
+        footer {
             background-color: coral;
             grid-area: f;
+            height: 10vh;
+            border-radius: 5px;
+            padding: 10px;
+            margin:10px;
         }
     </style>
 </head>
+
 <body>
-    <header><h1>header</h1></header>
-    <nav><h1>menu</h1></nav>
-    <main><h1>Main</h1></main>
-    <aside><h1>aside</h1></aside>
-    <footer><h1>footer</h1></footer>
+    <header>
+        <h1>header</h1>
+    </header>
+    <nav>
+        <h1>menu</h1>
+    </nav>
+    <main>
+        <h1>Main</h1>
+    </main>
+    <aside>
+        <h1>aside</h1>
+    </aside>
+    <footer>
+        <h1>footer</h1>
+    </footer>
 </body>
+
 </html>
